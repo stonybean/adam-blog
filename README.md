@@ -2,7 +2,7 @@
 
 My Blog [WELCOME](https://stonybean.github.io)
 
-forked from artemsheludko/adam-blog [HERE](https://github.com/artemsheludko/adam-blog)
+forked from [artemsheludko/adam-blog](https://github.com/artemsheludko/adam-blog)
 
 ## Features
 
