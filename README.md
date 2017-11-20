@@ -1,6 +1,6 @@
-## BLOG
+## Blog
 
-My Blog [WELCOME](https://stonybean.github.io)
+Welcome to [My Blog](https://stonybean.github.io)
 
 forked from [artemsheludko/adam-blog](https://github.com/artemsheludko/adam-blog)
 
