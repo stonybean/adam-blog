@@ -2,6 +2,8 @@
 
 My Blog [WELCOME](https://stonybean.github.io)
 
+forked from artemsheludko/adam-blog[HERE]([WELCOME](https://stonybean.github.io))
+
 ## Features
 
 - [Google Fonts](https://fonts.google.com/)
