@@ -7,9 +7,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author settings
-author: Tester # add your name
+author: stonybean # add your name
 author-pic: adam-face.jpg
-about-author: Tester
+about-author: MW
 
 # Contact links
 email: stonybean90@gmail.com # Add your Email address
