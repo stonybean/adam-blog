@@ -8,8 +8,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Author settings
 author: stonybean # add your name
 author-pic: adam-face.jpg
-about-author: Test
-Hello, stranger
+about-author: Test Hello, stranger
 
 # Contact links
 email: stonybean90@gmail.com # Add your Email address
