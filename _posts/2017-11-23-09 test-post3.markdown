@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  08 Test post 2
+title:  09 Test post 3
 date:   2017-11-23 10:34
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: # Add image post (optional)
+img: post-1.jpg # Add image post (optional)
 tags: [Blog, Test]
 author: tester
 ---
