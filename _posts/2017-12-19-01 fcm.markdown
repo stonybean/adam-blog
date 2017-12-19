@@ -13,16 +13,16 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 
 
 
-> 1. Android Studio에서 새 프로젝트 만들기
+> Android Studio에서 새 프로젝트 만들기
 
 ![create_new_project]({{site.baseurl}}/assets/img/01_FCM/01_create_new_project.png)
 
 먼저 Android Studio를 열고 기본 새 프로젝트를 하나 만들어 줍니다.
 (여기서 중요한 것은 패키지 이름입니다. 나중에 Firebase에 앱을 등록할 때 이 패키지 이름으로 등록합니다.)
 
+\n\n\n\n
 
-
-> 2. Firebase console에서 프로젝트 추가하기
+> Firebase console에서 프로젝트 추가하기
 
 [Firebase Console 페이지]
 
@@ -31,14 +31,13 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 
 콘솔에서 프로젝트 추가를 클릭합니다. (이미 생성해 놓은 프로젝트가 있다면 안드로이드 앱만 추가해도 됩니다.)
 
-
 ![firebase_add_project_02]({{site.baseurl}}/assets/img/01_FCM/03_firebase_add_project_02.png)
 
 프로젝트 이름을 입력하고 국가를 선택한 후 프로젝트 만들기를 클릭합니다.
 
+\n\n\n\n
 
-
-> 3. Android 앱에 Firebase 추가하기
+> Android 앱에 Firebase 추가하기
 
 이제 우리가 사용할 앱에 Firebase를 추가해 봅시다.
 
@@ -64,7 +63,7 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 이제 Firebase SDK를 추가할 차례입니다. 해당 안내를 보면 두 개의 build.gradle 파일을 수정해야 합니다.
 
 ![app_build.gradle]({{site.baseurl}}/assets/img/01_FCM/08_app_build.gradle.png)
-![project_build.gradle]({{site.baseurl}}/assets/img/01_FCM/09_project_build.gradle)
+![project_build.gradle]({{site.baseurl}}/assets/img/01_FCM/09_project_build.gradle.png)
 
 각각 다음과 같이 추가한 후 Sync Now를 누르면 됩니다.
 (만약 "Error:Failed to resolve: com.google.firebase:firebase-core:11.0.4..." 다음과 같은 에러가 난다면
