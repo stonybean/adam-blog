@@ -10,23 +10,23 @@ author: 우주
 
 FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 (Android Studio 2.3.3 버전에서 진행하였습니다.)
-
+<br><br><br><br><br>
 
 
 1| Android Studio에서 새 프로젝트 만들기
-
+<br>
 ![create_new_project]({{site.baseurl}}/assets/img/01_FCM/01_create_new_project.png)
 
 먼저 Android Studio를 열고 기본 새 프로젝트를 하나 만들어 줍니다.
 (여기서 중요한 것은 패키지 이름입니다. 나중에 Firebase에 앱을 등록할 때 이 패키지 이름으로 등록합니다.)
 
 
-
+<br>
 2| Firebase console에서 프로젝트 추가하기
 
 [Firebase Console 페이지]
 
-
+<br><br><br>
 ![firebase_add_project_01]({{site.baseurl}}/assets/img/01_FCM/02_firebase_add_project_01.png)
 
 콘솔에서 프로젝트 추가를 클릭합니다. (이미 생성해 놓은 프로젝트가 있다면 안드로이드 앱만 추가해도 됩니다.)
