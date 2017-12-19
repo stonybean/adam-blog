@@ -13,7 +13,7 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 
 
 
-'Android Studio에서 새 프로젝트 만들기'
+`Android Studio에서 새 프로젝트 만들기`
 
 ![create_new_project]({{site.baseurl}}/assets/img/01_FCM/01_create_new_project.png)
 
@@ -22,7 +22,7 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 
 
 
-'Firebase console에서 프로젝트 추가하기'
+`Firebase console에서 프로젝트 추가하기`
 
 [Firebase Console 페이지]
 
@@ -36,7 +36,7 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 프로젝트 이름을 입력하고 국가를 선택한 후 프로젝트 만들기를 클릭합니다.
 
 
-'Android 앱에 Firebase 추가하기'
+`Android 앱에 Firebase 추가하기`
 
 이제 우리가 사용할 앱에 Firebase를 추가해 봅시다.
 
