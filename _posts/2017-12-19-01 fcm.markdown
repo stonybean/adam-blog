@@ -12,58 +12,58 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 (Android Studio 2.3.3 버전에서 진행하였습니다.)
 <br><br><br><br><br>
 
-
 1| Android Studio에서 새 프로젝트 만들기
-<br>
+<br><br>
 ![create_new_project]({{site.baseurl}}/assets/img/01_FCM/01_create_new_project.png)
 
-먼저 Android Studio를 열고 기본 새 프로젝트를 하나 만들어 줍니다.
+먼저 Android Studio를 열고 기본 새 프로젝트를 하나 만들어 줍니다.<br>
 (여기서 중요한 것은 패키지 이름입니다. 나중에 Firebase에 앱을 등록할 때 이 패키지 이름으로 등록합니다.)
 
+<br><br><br><br>
 
-<br>
 2| Firebase console에서 프로젝트 추가하기
-
+<br><br>
 [Firebase Console 페이지]
 
 <br><br><br>
 ![firebase_add_project_01]({{site.baseurl}}/assets/img/01_FCM/02_firebase_add_project_01.png)
-
+<br><br>
 콘솔에서 프로젝트 추가를 클릭합니다. (이미 생성해 놓은 프로젝트가 있다면 안드로이드 앱만 추가해도 됩니다.)
-
+<br><br><br>
 ![firebase_add_project_02]({{site.baseurl}}/assets/img/01_FCM/03_firebase_add_project_02.png)
-
+<br><br>
 프로젝트 이름을 입력하고 국가를 선택한 후 프로젝트 만들기를 클릭합니다.
 
+<br><br><br><br>
 
 3| Android 앱에 Firebase 추가하기
-
+<br><br>
 ![firebase_android_01]({{site.baseurl}}/assets/img/01_FCM/04_firebase_android_01.png)
-
-이제 우리가 사용할 앱에 Firebase를 추가해 봅시다.
+<br><br>
+이제 우리가 사용할 앱에 Firebase를 추가해 봅시다.<br>
 프로젝트가 생성되면 해당 페이지가 나타나고 여기서 Android 앱에 Firebase 추가를 클릭합니다.
 
-
+<br><br><br>
 ![firebase_android_02]({{site.baseurl}}/assets/img/01_FCM/05_firebase_android_02.png)
-
-조금 전 Android Studio에서 새 프로젝트를 만들 때 패키지 이름이 중요하다고 한 것 기억나시나요? 바로 그 패키지 이름을 여기에 입력해줍니다.
+<br><br>
+조금 전 Android Studio에서 새 프로젝트를 만들 때 패키지 이름이 중요하다고 한 것 기억나시나요? 바로 그 패키지 이름을 여기에 입력해줍니다.<br>
 앱 등록을 누르면 이제 구성 파일 다운로드로 넘어가게 됩니다.
 
-
+<br><br><br>
 ![firebase_android_03]({{site.baseurl}}/assets/img/01_FCM/06_firebase_android_03.png)
+<br><br>
+여기서 이제 google-services.json 파일을 다운받습니다. 안내에 나와있는 것처럼 다운받은 google-services.json 파일은 app 디렉토리 밑에 저렇게 복사해서 넣어주시면 됩니다.<br>파일을 복사했다면 계속을 눌러 다음으로 진행합니다.
 
-여기서 이제 google-services.json 파일을 다운받습니다. 안내에 나와있는 것처럼 다운받은 google-services.json 파일은 app 디렉토리 밑에 저렇게 복사해서 넣어주시면 됩니다. 파일을 복사했다면 계속을 눌러 다음으로 진행합니다.
-
-
+<br><br><br>
 ![firebase_android_04]({{site.baseurl}}/assets/img/01_FCM/07_firebase_android_04.png)
-
+<br><br>
 이제 Firebase SDK를 추가할 차례입니다. 해당 안내를 보면 두 개의 build.gradle 파일을 수정해야 합니다.
-
+<br><br><br>
 ![app_build.gradle]({{site.baseurl}}/assets/img/01_FCM/08_app_build.gradle.png)
 ![project_build.gradle]({{site.baseurl}}/assets/img/01_FCM/09_project_build.gradle.png)
-
-각각 다음과 같이 추가한 후 Sync Now를 누르면 됩니다.
-(만약 "Error:Failed to resolve: com.google.firebase:firebase-core:11.0.4..." 다음과 같은 에러가 난다면
+<br><br>
+각각 다음과 같이 추가한 후 Sync Now를 누르면 됩니다.<br>
+(만약 "Error:Failed to resolve: com.google.firebase:firebase-core:11.0.4..." 다음과 같은 에러가 난다면<br>
 Android Studio SDK Manager에서 SDK Tools 중 Google Play Services와 Google Repository를 설치하면 정상적으로 Sync가 됩니다.)
 
 
