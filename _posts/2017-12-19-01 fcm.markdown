@@ -252,7 +252,8 @@ public class MainActivity extends AppCompatActivity {
 하여 Advanced REST client(ARC)를 이용해 푸쉬 테스트를 해보려 합니다.<br>
 ([Advanced REST client를 이용한 안드로이드앱 백그라운드 푸쉬 테스트])
 
-'FCM을 이용한 Android Push 구현하기'는 이상으로 마칩니다. 감사합니다.
+
+<br><br><br>'FCM을 이용한 Android Push 구현하기'는 이상으로 마칩니다. 감사합니다.
 
 
 
