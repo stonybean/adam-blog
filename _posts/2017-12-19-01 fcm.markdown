@@ -182,7 +182,7 @@ FCM API : https://fcm.googleapis.com/fcm/send
 
 위처럼 보내기 때문에 데이터를 받아서 처리할 수 있습니다.<br> 
 
-> 해당 부분은 ([Advanced REST client를 이용한 안드로이드앱 백그라운드 푸쉬 테스트]) 에서 자세히 확인!
+> 해당 부분은 ([Advanced REST client를 이용한 안드로이드 푸쉬 테스트]) 에서 자세히 확인!
 
 <br><br><br><br>
 
@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
 앱을 구현했으니 이제 테스트를 해봐야하는데, 앞서 설명드린 것처럼 Firebase Console에서 메시지를 테스트로 보내는 것에는 한계가 있습니다.
 
 하여 Advanced REST client(ARC)를 이용해 푸쉬 테스트를 해보려 합니다.<br>
-([Advanced REST client를 이용한 안드로이드앱 백그라운드 푸쉬 테스트])
+([Advanced REST client를 이용한 안드로이드 푸쉬 테스트])
 
 
 <br><br><br>'FCM을 이용한 Android Push 구현하기'는 이상으로 마칩니다. 감사합니다.
@@ -258,8 +258,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 <br><br><br><br>
+전체 소스는 [이곳]에서 확인하실 수 있습니다.
+
 참고 : [Firebase 가이드]
 
 [Firebase 가이드]: https://firebase.google.com/docs/cloud-messaging/android/client?hl=ko
 [Firebase Console 페이지]: https://console.firebase.google.com/
-[Advanced REST client를 이용한 안드로이드앱 백그라운드 푸쉬 테스트]: https://stonybean.github.io/02-ARC/
+[Advanced REST client를 이용한 안드로이드 푸쉬 테스트]: https://stonybean.github.io/02-ARC/
+[이곳]: https://github.com/stonybean/MyPushTest
