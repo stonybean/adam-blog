@@ -61,7 +61,7 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 
 각각 다음과 같이 추가한 후 Sync Now를 누르면 됩니다.<br>
 
->(만약 "Error:Failed to resolve: com.google.firebase:firebase-core:11.0.4..." 다음과 같은 에러가 난다면<br>
+>(만약 "Error:Failed to resolve: com.google.firebase:firebase-messaging:11.0.4..." 다음과 같은 에러가 난다면<br>
 SDK Manager에서 SDK Tools의 `Google Play Services`와 `Google Repository`를 설치하면 정상적으로 Sync가 됩니다.)
 
 'com.google.firebase:firebase-messaging:11.0.4'의 버전은 자주 업데이트되니 업데이트 사항을 확인하고 항상 최신 버전으로 유지하는 것이 좋습니다.<br><br><br><br>
