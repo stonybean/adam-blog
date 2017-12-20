@@ -1,0 +1,265 @@
+---
+layout: post
+title:  Android| Advanced REST client를 이용한 안드로이드앱 백그라운드 푸쉬 테스트
+date:   2017-12-20
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: /01_FCM/intro.png
+tags: [Blog, Android, FCM, ARC]
+author: 우주
+---
+
+FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
+(Android Studio 2.3.3 버전에서 진행하였습니다.)
+<br><br><br><br><br>
+
+1_Android Studio에서 새 프로젝트 만들기
+<br><br>
+![create_new_project]({{site.baseurl}}/assets/img/01_FCM/01_create_new_project.png)
+
+먼저 Android Studio를 열고 기본 새 프로젝트를 하나 만들어 줍니다.<br>
+(여기서 중요한 것은 패키지 이름입니다. 나중에 Firebase에 앱을 등록할 때 이 패키지 이름으로 등록합니다.)
+
+<br><br><br><br>
+
+2_Firebase console에서 프로젝트 추가하기
+<br><br>
+[Firebase Console 페이지]
+
+<br><br><br>![firebase_add_project_01]({{site.baseurl}}/assets/img/01_FCM/02_firebase_add_project_01.png)
+
+콘솔에서 프로젝트 추가를 클릭합니다. (이미 생성해 놓은 프로젝트가 있다면 안드로이드 앱만 추가해도 됩니다.)
+
+<br><br><br>![firebase_add_project_02]({{site.baseurl}}/assets/img/01_FCM/03_firebase_add_project_02.png)
+
+프로젝트 이름을 입력하고 국가를 선택한 후 프로젝트 만들기를 클릭합니다.<br><br><br><br>
+
+3_Android 앱에 Firebase 추가하기
+
+이제 우리가 사용할 앱에 Firebase를 추가해 봅시다.
+
+<br><br>![firebase_android_01]({{site.baseurl}}/assets/img/01_FCM/04_firebase_android_01.png)
+
+프로젝트가 생성되면 해당 페이지가 나타나고 여기서 Android 앱에 Firebase 추가를 클릭합니다.
+
+<br><br><br>![firebase_android_02]({{site.baseurl}}/assets/img/01_FCM/05_firebase_android_02.png)
+
+조금 전 Android Studio에서 새 프로젝트를 만들 때 패키지 이름이 중요하다고 한 것 기억나시나요? 바로 그 패키지 이름을 여기에 입력해줍니다.<br>
+앱 등록을 누르면 이제 구성 파일 다운로드로 넘어가게 됩니다.
+
+<br><br><br>![firebase_android_03]({{site.baseurl}}/assets/img/01_FCM/06_firebase_android_03.png)
+
+여기서 google-services.json 파일을 다운받습니다.<br>
+안내에 나와있는 것처럼 다운받은 파일을 app 디렉토리 밑에 저렇게 복사해서 넣어주시면 됩니다.<br>
+파일을 복사했다면 계속을 눌러 다음으로 진행합니다.
+
+<br><br><br>![firebase_android_04]({{site.baseurl}}/assets/img/01_FCM/07_firebase_android_04.png)
+
+이제 Firebase SDK를 추가할 차례입니다. 안내를 보면 두 개의 build.gradle 파일을 수정해야 합니다.
+
+<br><br><br>![app_build.gradle]({{site.baseurl}}/assets/img/01_FCM/08_app_build.gradle.png)
+![project_build.gradle]({{site.baseurl}}/assets/img/01_FCM/09_project_build.gradle.png)
+
+각각 다음과 같이 추가한 후 Sync Now를 누르면 됩니다.<br>
+
+>(만약 "Error:Failed to resolve: com.google.firebase:firebase-messaging:11.0.4..." 다음과 같은 에러가 난다면<br>
+SDK Manager에서 SDK Tools의 `Google Play Services`와 `Google Repository`를 설치하면 정상적으로 Sync가 됩니다.)
+
+'com.google.firebase:firebase-messaging:11.0.4'의 버전은 자주 업데이트되니 업데이트 사항을 확인하고 항상 최신 버전으로 유지하는 것이 좋습니다.<br><br><br><br>
+
+4_Manifest 수정
+
+<br><br>![manifest]({{site.baseurl}}/assets/img/01_FCM/11_manifest.png)
+
+{% highlight java %}
+<!-- 서비스 태그 추가 -->
+<service
+    android:name=".MyFirebaseMessagingService">
+    <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+    </intent-filter>
+</service>
+
+<service
+    android:name=".MyFirebaseInstanceIDService">
+    <intent-filter>
+        <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+    </intent-filter>
+</service>
+{% endhighlight %}
+
+AndroidManifest.xml 파일을 열고 서비스 태그를 위와 같이 두 개를 추가해 줍니다.<br>
+추가를 하면 빨간색으로 표시가 될텐데 해당 클래스를 아직 만들지 않았기 때문입니다.<br><br><br><br>
+
+5_클래스 파일 추가
+
+<br><br>![tree]({{site.baseurl}}/assets/img/01_FCM/10_tree.png)
+
+MainActivity 외에 클래스 파일 두 개를 추가해 줍니다.<br>
+
+1. MyFirebaseMessagingService<br>
+2. MyFirebaseInstanceIDService<br><br><br><br>
+
+6_MyFirebaseMessagingService
+{% highlight java %}
+package com.example.mypushtest; // 사용 중인 패키지 이름
+
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
+
+import com.google.firebase.messaging.RemoteMessage;
+
+import java.util.Map;
+
+public class MyFirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService {
+    private static final String TAG = MyFirebaseMessagingService.class.getSimpleName();
+
+    // 메시지 수신
+    @Override
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        Log.i(TAG, "onMessageReceived");
+
+        Map<String, String> data = remoteMessage.getData();
+        String title = data.get("title");
+        String messagae = data.get("content");
+
+        sendNotification(title, messagae);
+    }
+
+    private void sendNotification(String title, String message) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
+        PendingIntent.FLAG_CANCEL_CURRENT);
+
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+            .setLargeIcon(BitmapFactory.decodeResource(getResources(), android.R.drawable.ic_dialog_info))
+            .setSmallIcon(R.mipmap.ic_launcher)
+            .setContentTitle(title)
+            .setContentText(message)
+            .setAutoCancel(true)
+            .setSound(defaultSoundUri)
+            .setContentIntent(pendingIntent);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+}
+{% endhighlight %}
+
+여기서 중요하게 봐야할 점은<br>
+{% highlight java %}
+    Map<String, String> data = remoteMessage.getData();
+    String title = data.get("title");
+    String messagae = data.get("content");
+{% endhighlight %}
+이 부분입니다.
+
+앱을 만들고보니 Firebase Console에서 메시지 푸쉬 테스트를 할 때 앱이 비활성화(백그라운드) 되어 있는 상태에서는 onMessageReceived()를 타지 않는 것을 확인할 수 있었습니다.
+
+결국 onMessageReceived()에서 데이터를 받을 수가 없기 때문에 아무리 노티피케이션 세팅을 수정해도 그냥 기본 노티피케이션으로만 보여집니다. (저도 몇 시간을 삽질..)
+
+<br>해결 방법은 만약 앱이 죽어있거나 백그라운드 상태일 경우 FCM API를 직접 호출해주면 됩니다. 
+
+FCM API : https://fcm.googleapis.com/fcm/send
+
+{% highlight java %}
+{
+    "to": "Your device token",
+    "data": {
+        "title":"My Push Test",
+        "content":"Test Message"
+    }
+}
+{% endhighlight %}
+
+위처럼 보내기 때문에 데이터를 받아서 처리할 수 있습니다.<br> 
+
+> 해당 부분은 ([Advanced REST client를 이용한 안드로이드앱 백그라운드 푸쉬 테스트]) 에서 자세히 확인!
+
+<br><br><br><br>
+
+7_MyFirebaseInstanceIDService
+{% highlight java %}
+package com.example.mypushtest; // 사용 중인 패키지 이름
+
+import android.util.Log;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
+
+public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
+    private static final String TAG = MyFirebaseInstanceIDService.class.getSimpleName();
+
+    // 토큰 재생성
+    @Override
+    public void onTokenRefresh() {
+        // Get updated InstanceID token.
+        String token = FirebaseInstanceId.getInstance().getToken();
+    Log.d(TAG, "token = " + token);
+    }
+}
+{% endhighlight %}
+앱을 처음 시작할 때 FCM SDK에서 클라이언트 앱 인스턴스용 등록 토큰을 생성합니다. 단일 기기를 타겟팅하거나 기기 그룹을 만들려면 FirebaseInstanceIdService를 확장하여 이 토큰에 액세스해야 합니다.<br>
+토큰이 새로 생성될 때마다 onTokenRefresh 콜백이 실행되므로 이 콜백의 컨텍스트에서 getToken을 호출하면 사용 가능한 현재 등록 토큰에 항상 액세스하게 됩니다.
+
+등록 토큰이 변경되는 경우
+ - 앱에서 인스턴스 ID 삭제<br>
+ - 새 기기에서 앱 복원<br>
+ - 사용자가 앱 삭제/재설치<br>
+ - 사용자가 앱 데이터 소거<br><br><br><br>
+
+8_MainActivity
+{% highlight java %}
+package com.example.mypushtest; // 사용 중인 패키지 이름
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+
+public class MainActivity extends AppCompatActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        FirebaseInstanceId.getInstance().getToken();
+
+        if (FirebaseInstanceId.getInstance().getToken() != null) {
+            Log.d(TAG, "token = " + FirebaseInstanceId.getInstance().getToken());
+        }
+    }
+}
+{% endhighlight %}
+현재 토큰을 검색하려면 FirebaseInstanceId.getInstance().getToken()을 호출합니다. 토큰이 아직 생성되지 않은 경우 null이 반환됩니다
+<br><br><br><br>
+
+안드로이드 앱에서 해야할 부분은 여기까지입니다.<br>
+앱을 구현했으니 이제 테스트를 해봐야하는데, 앞서 설명드린 것처럼 Firebase Console에서 메시지를 테스트로 보내는 것에는 한계가 있습니다.
+
+하여 Advanced REST client(ARC)를 이용해 푸쉬 테스트를 해보려 합니다.<br>
+([Advanced REST client를 이용한 안드로이드앱 백그라운드 푸쉬 테스트])
+
+
+<br><br><br>'FCM을 이용한 Android Push 구현하기'는 이상으로 마칩니다. 감사합니다.
+
+
+
+<br><br><br><br>
+참고 : [Firebase 가이드]
+
+[Firebase 가이드]: https://firebase.google.com/docs/cloud-messaging/android/client?hl=ko
+[Firebase Console 페이지]: https://console.firebase.google.com/
+[Advanced REST client를 이용한 안드로이드앱 백그라운드 푸쉬 테스트]: https://stonybean.github.io/02-ARC/
