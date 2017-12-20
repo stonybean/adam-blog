@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Android| FCM을 이용한 Android Push 구현하기
+title:  Android| FCM을 이용한 Android Push 구현하기 01
 date:   2017-12-19
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: /01_FCM/intro.png
@@ -153,6 +153,38 @@ public class MyFirebaseMessagingService extends com.google.firebase.messaging.Fi
     }
 }
 {% endhighlight %}
+
+여기서 중요하게 봐야할 점은<br>
+{% highlight java %}
+    Map<String, String> data = remoteMessage.getData();
+    String title = data.get("title");
+    String messagae = data.get("content");
+{% endhighlight %}
+이 부분입니다.
+
+앱을 만들고보니 Firebase Console에서 메시지 푸쉬 테스트를 할 때 앱이 비활성화(백그라운드) 되어 있는 상태에서는 onMessageReceived()를 타지 않는 것을 확인할 수 있었습니다.
+
+결국 onMessageReceived()에서 데이터를 받을 수가 없기 때문에 아무리 노티피케이션 세팅을 수정해도 그냥 기본 노티피케이션으로만 보여집니다. (저도 몇 시간을 삽질..)
+
+<br>해결 방법은 만약 앱이 죽어있거나 백그라운드 상태일 경우 FCM API를 직접 호출해주면 됩니다. 
+
+FCM API : https://fcm.googleapis.com/fcm/send
+
+{% highlight java %}
+{
+    "to": "Your device token",
+    "data": {
+        "title":"My Push Test",
+        "content":"Test Message"
+    }
+}
+{% endhighlight %}
+
+위처럼 보내기 때문에 데이터를 받아서 처리할 수 있습니다.<br> 
+
+> 해당 부분은 ([FCM을 이용한 Android Push 구현하기 02]) 에서 자세히 확인!
+
+
 <br><br><br><br>
 
 7_MyFirebaseInstanceIDService
@@ -206,7 +238,13 @@ public class MainActivity extends AppCompatActivity {
 }
 {% endhighlight %}
 
+FirebaseInstanceId.getInstance().getToken(); 여기서 얻어오는 토큰값이 없을 경우에는 MyFirebaseInstanceIDService에서 토큰을 재생성합니다.
+<br><br><br><br>
+
+
+
 
 
 
 [Firebase Console 페이지]: https://console.firebase.google.com/
+[FCM을 이용한 Android Push 구현하기 02]: https://stonybean.github.io/02-FCM/
