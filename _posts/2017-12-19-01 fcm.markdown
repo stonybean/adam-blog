@@ -258,20 +258,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 <br><br><br><br>
-<<<<<<< HEAD
 전체 소스는 [이곳]에서 확인하실 수 있습니다.
-=======
-전체 소스는 [여기]서 확인하실 수 있습니다.
->>>>>>> 8863e0916191f8b6c6037170174921060a94d39e
 
 참고 : [Firebase 가이드]
 
 [Firebase 가이드]: https://firebase.google.com/docs/cloud-messaging/android/client?hl=ko
 [Firebase Console 페이지]: https://console.firebase.google.com/
-<<<<<<< HEAD
 [Advanced REST client를 이용한 안드로이드 푸쉬 테스트]: https://stonybean.github.io/02-ARC/
 [이곳]: https://github.com/stonybean/MyPushTest
-=======
-[Advanced REST client를 이용한 안드로이드앱 백그라운드 푸쉬 테스트]: https://stonybean.github.io/02-ARC/
-[여기]: https://github.com/stonybean/MyPushTest
->>>>>>> 8863e0916191f8b6c6037170174921060a94d39e
