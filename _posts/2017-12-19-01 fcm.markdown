@@ -165,7 +165,7 @@ public class MyFirebaseMessagingService extends com.google.firebase.messaging.Fi
 {% endhighlight %}
 이 부분입니다.
 
-앱을 만들고보니 Firebase Console에서 메시지 푸쉬 테스트를 할 때 앱이 비활성화(백그라운드) 되어 있는 상태에서는 onMessageReceived()를 타지 않는 것을 확인할 수 있었습니다.
+앱을 만들고보니 Firebase Console에서 메시지 푸시 테스트를 할 때 앱이 비활성화(백그라운드) 되어 있는 상태에서는 onMessageReceived()를 타지 않는 것을 확인할 수 있었습니다.
 
 결국 onMessageReceived()에서 데이터를 받을 수가 없기 때문에 아무리 노티피케이션 세팅을 수정해도 그냥 기본 노티피케이션으로만 보여집니다. (저도 몇 시간을 삽질..)
 
@@ -185,7 +185,7 @@ FCM API : https://fcm.googleapis.com/fcm/send
 
 위처럼 보내기 때문에 데이터를 받아서 처리할 수 있습니다.<br> 
 
-> 해당 부분은 ([Advanced REST client를 이용한 안드로이드 푸쉬 테스트]) 에서 자세히 확인!
+> 해당 부분은 ([Advanced REST client를 이용한 안드로이드 푸시 테스트]) 에서 자세히 확인!
 <br><br><br><br><br>
 
 7_MyFirebaseInstanceIDService
@@ -252,8 +252,8 @@ public class MainActivity extends AppCompatActivity {
 안드로이드 앱에서 해야할 부분은 여기까지입니다.<br>
 앱을 구현했으니 이제 테스트를 해봐야하는데, 앞서 설명드린 것처럼 Firebase Console에서 메시지를 테스트로 보내는 것에는 한계가 있습니다.
 
-하여 Advanced REST client(ARC)를 이용해 푸쉬 테스트를 해보려 합니다.<br>
-([Advanced REST client를 이용한 안드로이드 푸쉬 테스트])
+하여 Advanced REST client(ARC)를 이용해 푸시 테스트를 해보려 합니다.<br>
+([Advanced REST client를 이용한 안드로이드 푸시 테스트])
 
 
 <br><br><br>'FCM을 이용한 Android Push 구현하기'는 이상으로 마칩니다. 감사합니다.
@@ -267,5 +267,5 @@ public class MainActivity extends AppCompatActivity {
 
 [Firebase 가이드]: https://firebase.google.com/docs/cloud-messaging/android/client?hl=ko
 [Firebase Console 페이지]: https://console.firebase.google.com/
-[Advanced REST client를 이용한 안드로이드 푸쉬 테스트]: https://stonybean.github.io/02-ARC/
+[Advanced REST client를 이용한 안드로이드 푸시 테스트]: https://stonybean.github.io/02-ARC/
 [이곳]: https://github.com/stonybean/MyPushTest

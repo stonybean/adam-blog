@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Android| Advanced REST client를 이용한 안드로이드 푸쉬 테스트
+title:  Android| Advanced REST client를 이용한 안드로이드 푸시 테스트
 date:   2017-12-20
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: /01_FCM/intro.png
@@ -8,16 +8,16 @@ tags: [Blog, Android, FCM, ARC]
 author: 우주
 ---
 
-FCM을 이용해 안드로이드 푸쉬 앱을 구현했다면 테스트를 해봐야겠죠? 바로 Firebase Console에서 메시지를 보내 테스트를 할 수도 있습니다.
+FCM을 이용해 안드로이드 푸시 앱을 구현했다면 테스트를 해봐야겠죠? 바로 Firebase Console에서 메시지를 보내 테스트를 할 수도 있습니다.
 
 <br><br><br>![firebase_console_noti]({{site.baseurl}}/assets/img/02_ARC/firebase_console_noti.png)
 
-> 이렇게 푸쉬 테스트를 할 수도 있습니다.
+> 이렇게 푸시 테스트를 할 수도 있습니다.
 
 <br><br>
 
-하지만 실제 앱에서는 어쨌든 서버를 통해 푸쉬를 받게될 경우가 많을 것이기 때문에 (서버는 못 만들겠고..)<br> 
-Advanced REST client(ARC)를 이용해 푸쉬 테스트를 한 번 해보겠습니다.<br>
+하지만 실제 앱에서는 어쨌든 서버를 통해 푸시를 받게될 경우가 많을 것이기 때문에 (서버는 못 만들겠고..)<br> 
+Advanced REST client(ARC)를 이용해 푸시 테스트를 한 번 해보겠습니다.<br>
 (굳이 ARC만 쓸 이유는 없고 Postman 이라던가 다른 REST client를 사용하셔도 됩니다.)
 <br><br><br><br><br>
 
@@ -69,7 +69,7 @@ Firebase Console에서 이전에 만들었던 자신의 프로젝트를 클릭�
     }
 }
 {% endhighlight %}
-"to": 부분에는 안드로이드 앱에서 얻은 토큰값을 넣어줍니다. (우리가 만든 앱에만 푸쉬를 날릴 것이기 때문) <br>
+"to": 부분에는 안드로이드 앱에서 얻은 토큰값을 넣어줍니다. (우리가 만든 앱에만 푸시를 날릴 것이기 때문) <br>
 
 이렇게 설정하면 MyFirebaseMessagingService의 onMessageReceived()에서 아래처럼 데이터를 받을 수 있게 됩니다.<br>
 {% highlight java %}
@@ -80,14 +80,14 @@ Firebase Console에서 이전에 만들었던 자신의 프로젝트를 클릭�
 
 <br><br>
 
-설정이 끝난 후 SEND를 눌러보면 정상적으로 푸쉬를 수신하여 앱의 포그라운드/백그라운드에 상관없이 동일한 노티피케이션이 생성되는 것을 볼 수 있습니다.
+설정이 끝난 후 SEND를 눌러보면 정상적으로 푸시를 수신하여 앱의 포그라운드/백그라운드에 상관없이 동일한 노티피케이션이 생성되는 것을 볼 수 있습니다.
 
-<br><br><br>'Advanced REST client를 이용한 안드로이드 푸쉬 테스트'는 이상으로 마칩니다. 감사합니다.
+<br><br><br>'Advanced REST client를 이용한 안드로이드 푸시 테스트'는 이상으로 마칩니다. 감사합니다.
 
 
 
 <br><br><br><br>
-안드로이드 푸쉬앱 소스는 [이곳]에서 확인하실 수 있습니다.
+안드로이드 푸시앱 소스는 [이곳]에서 확인하실 수 있습니다.
 
 참고 : [Firebase 가이드]
 
