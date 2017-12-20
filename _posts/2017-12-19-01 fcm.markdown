@@ -12,7 +12,7 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 (Android Studio 2.3.3 버전에서 진행하였습니다.)
 <br><br><br><br><br>
 
-1| Android Studio에서 새 프로젝트 만들기
+1_Android Studio에서 새 프로젝트 만들기
 <br><br>
 ![create_new_project]({{site.baseurl}}/assets/img/01_FCM/01_create_new_project.png)
 
@@ -21,7 +21,7 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 
 <br><br><br><br>
 
-2| Firebase console에서 프로젝트 추가하기
+2_Firebase console에서 프로젝트 추가하기
 <br><br>
 [Firebase Console 페이지]
 
@@ -33,7 +33,7 @@ FCM을 이용한 안드로이드 Push를 구현하는 방법입니다.
 
 프로젝트 이름을 입력하고 국가를 선택한 후 프로젝트 만들기를 클릭합니다.<br><br><br><br>
 
-3| Android 앱에 Firebase 추가하기
+3_Android 앱에 Firebase 추가하기
 
 이제 우리가 사용할 앱에 Firebase를 추가해 봅시다.
 
@@ -66,31 +66,31 @@ SDK Manager에서 SDK Tools의 `Google Play Services`와 `Google Repository`를 
 
 'com.google.firebase:firebase-messaging:11.0.4'의 버전은 자주 업데이트되니 업데이트 사항을 확인하고 항상 최신 버전으로 유지하는 것이 좋습니다.<br><br><br><br>
 
-4| Manifest 수정
+4_Manifest 수정
 
 <br><br>![manifest]({{site.baseurl}}/assets/img/01_FCM/11_manifest.png)
 
 {% highlight java %}
 <!-- 서비스 태그 추가 -->
 <service
-android:name=".MyFirebaseMessagingService">
-<intent-filter>
-<action android:name="com.google.firebase.MESSAGING_EVENT"/>
-</intent-filter>
+    android:name=".MyFirebaseMessagingService">
+    <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+    </intent-filter>
 </service>
 
 <service
-android:name=".MyFirebaseInstanceIDService">
-<intent-filter>
-<action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-</intent-filter>
+    android:name=".MyFirebaseInstanceIDService">
+    <intent-filter>
+        <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+    </intent-filter>
 </service>
 {% endhighlight %}
 
 AndroidManifest.xml 파일을 열고 서비스 태그를 위와 같이 두 개를 추가해 줍니다.<br>
 추가를 하면 빨간색으로 표시가 될텐데 해당 클래스를 아직 만들지 않았기 때문입니다.<br><br><br><br>
 
-5| 클래스 파일 추가
+5_클래스 파일 추가
 
 <br><br>![tree]({{site.baseurl}}/assets/img/01_FCM/10_tree.png)
 
@@ -99,11 +99,112 @@ MainActivity 외에 클래스 파일 두 개를 추가해 줍니다.<br>
 1. MyFirebaseMessagingService<br>
 2. MyFirebaseInstanceIDService<br><br><br><br>
 
-6| MyFirebaseMessagingService
+6_MyFirebaseMessagingService
+{% highlight java %}
+package com.example.mypushtest; // 사용 중인 패키지 이름
 
-7| MyFirebaseInstanceIDService
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
-8| MainActivity
+import com.google.firebase.messaging.RemoteMessage;
+
+import java.util.Map;
+
+public class MyFirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService {
+    private static final String TAG = MyFirebaseMessagingService.class.getSimpleName();
+
+    // 메시지 수신
+    @Override
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        Log.i(TAG, "onMessageReceived");
+
+        Map<String, String> data = remoteMessage.getData();
+        String title = data.get("title");
+        String messagae = data.get("content");
+
+        sendNotification(title, messagae);
+    }
+
+    private void sendNotification(String title, String message) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
+        PendingIntent.FLAG_CANCEL_CURRENT);
+
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+            .setLargeIcon(BitmapFactory.decodeResource(getResources(), android.R.drawable.ic_dialog_info))
+            .setSmallIcon(R.mipmap.ic_launcher)
+            .setContentTitle(title)
+            .setContentText(message)
+            .setAutoCancel(true)
+            .setSound(defaultSoundUri)
+            .setContentIntent(pendingIntent);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+}
+{% endhighlight %}
+<br><br><br><br>
+
+7_MyFirebaseInstanceIDService
+{% highlight java %}
+package com.example.mypushtest; // 사용 중인 패키지 이름
+
+import android.util.Log;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
+
+public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
+    private static final String TAG = MyFirebaseInstanceIDService.class.getSimpleName();
+
+    // 토큰 재생성
+    @Override
+    public void onTokenRefresh() {
+        // Get updated InstanceID token.
+        String token = FirebaseInstanceId.getInstance().getToken();
+    Log.d(TAG, "token = " + token);
+    }
+}
+{% endhighlight %}
+<br><br><br><br>
+
+8_MainActivity
+{% highlight java %}
+package com.example.mypushtest; // 사용 중인 패키지 이름
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+
+public class MainActivity extends AppCompatActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        FirebaseInstanceId.getInstance().getToken();
+
+        if (!TextUtils.isEmpty(FirebaseInstanceId.getInstance().getToken())) {
+            Log.d(TAG, "token = " + FirebaseInstanceId.getInstance().getToken());
+        }
+    }
+}
+{% endhighlight %}
 
 
 
