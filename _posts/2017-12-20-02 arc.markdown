@@ -25,7 +25,8 @@ Advanced REST client(ARC)를 이용해 푸쉬 테스트를 한 번 해보겠습�
 <br><br>
 ![arc_01]({{site.baseurl}}/assets/img/02_ARC/arc_01.png)
 
-왼쪽에서 HTTP request를 선택하고 Method는 POST, Request URL은 https://fcm.googleapis.com/fcm/send를 입력해줍니다.<br><br><br><br>
+왼쪽에서 HTTP request를 선택하고 Method는 POST, Request URL은 [https://fcm.googleapis.com/fcm/send]를 입력해줍니다.
+<br><br><br><br><br>
 
 2_ARC Header 세팅
 <br><br>
@@ -34,7 +35,8 @@ Advanced REST client(ARC)를 이용해 푸쉬 테스트를 한 번 해보겠습�
 1. Header name : content-type, Header value : application/json
 2. Header name : authorization, Header value : key=your device token<br>
 
-여기서 중요한 부분이 2번의 Header value 입니다. "key=" 이 뒷부분에 우리가 만들었던 Firebase 프로젝트의 서버 키를 넣어주어야 합니다.<br><br><br><br>
+여기서 중요한 부분이 2번의 Header value 입니다. "key=" 이 뒷부분에 우리가 만들었던 Firebase 프로젝트의 서버 키를 넣어주어야 합니다.
+<br><br><br><br><br>
 
 3_Firebase 서버 키 얻기
 
@@ -51,7 +53,8 @@ Firebase Console에서 이전에 만들었던 자신의 프로젝트를 클릭�
 
 <br><br><br>![firebase_console_03]({{site.baseurl}}/assets/img/02_ARC/firebase_console_03.png)
 
-두 번째 클라우드 메시징 탭에서 서버 키를 발견할 수 있습니다. 이 서버 키를 복사해서 ARC 두 번째 Header value에 넣어주도록 합니다.<br><br><br><br>
+두 번째 클라우드 메시징 탭에서 서버 키를 발견할 수 있습니다. 이 서버 키를 복사해서 ARC 두 번째 Header value에 넣어주도록 합니다.
+<br><br><br><br><br>
 
 4_ARC Body 세팅
 <br><br>
@@ -88,6 +91,7 @@ Firebase Console에서 이전에 만들었던 자신의 프로젝트를 클릭�
 
 참고 : [Firebase 가이드]
 
+[https://fcm.googleapis.com/fcm/send]: https://fcm.googleapis.com/fcm/send
 [Firebase 가이드]: https://firebase.google.com/docs/cloud-messaging/android/client?hl=ko
 [Firebase Console]: https://console.firebase.google.com/
 [이곳]: https://github.com/stonybean/MyPushTest
