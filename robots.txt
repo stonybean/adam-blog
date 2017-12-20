@@ -1,4 +1,7 @@
-User-agent: *
+User-agent: Googlebot
+User-agent: DAUMOA
+User-agent: NaverBot
+User-agent: ZumBot
 Allow: /
 
 Sitemap: https://stonybean.github.io/sitemap.xml
