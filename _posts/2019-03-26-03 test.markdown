@@ -1,54 +1,27 @@
 ---
 layout: post
-title:  Android| APK Decompile
+title:  Android| 앱 아키텍처 패턴
 date:   2019-03-26
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: /01_FCM/intro.png
-tags: [Android]
+img: /03_Architecture/01_camera_app_process.png
+tags: [Android][Architecture][DesignPattern]
 author: 우주
 ---
 
-이번 해부터 회사에서 돌아가면서 세미나를 준비하게 되었다.
+이번 해부터 회사에서 돌아가면서 세미나를 준비하게 되었다.<br><br>
+발표 주제는 없음(...) 각자 알아서 하고 싶은 걸로. 제일 어려운 주제다.<br><br>
+무엇을 할까 고민하다 평소 들어보기는 했지만 제대로 알지 못했던 아키텍처 패턴(혹은 디자인 패턴)에 대해 발표하기로 결정했다.<br><br>
+수많은 자료를 보고 여러 블로그들을 방문하면서 다양한 정보들을 찾을 수 있었지만 아키텍처 패턴이 왜 필요하며 어떻게 등장하게 되었는가에 대한 설명은 조금 부족하다고 느꼈다.<br><br>
+그래서 먼저 그 부분에 대해 간단히 정리 후 각 패턴에 대한 설명을 정리하겠다.<br>
+
+<br><br><br><br><br><br>
+
+<span style="color: #0c343d; font-size: x-large;"><b> 1. 모바일 앱 아키텍처 개요</b></span><br><br>
+<span style="color: #0c343d; font-size: large;"><b>1-1 모바일 앱 사용자 환경</b></span><br><br>
 
 
-
-발표 주제는 없음(...) 각자 알아서 하고 싶은 걸로. 제일 어려운 주제다.
-
-
-
-무엇을 할까 고민하다 평소 들어보기는 했지만 제대로 알지 못했던 아키텍처 패턴(혹은 디자인 패턴)에 대해 발표하기로 결정했다.
-
-
-
-세미나 준비를 하면서 수많은 자료를 보고 여러 블로그들을 방문 하면서(구글링) 다양한 정보들을 찾아볼 수 있었지만 아키텍처 패턴이 왜 필요하며 어떻게 등장하게 되었는가에 대한 설명은 조금 부족하다고 느꼈다.
-
-
-
-그래서 각 패턴에 대한 설명 전에 먼저 그 부분에 대해 간단히 정리하고 넘어가도록 하겠다.
-
-(혹시나 필요하신 분들께 조금이나마 도움이 될까해 발표 후 정리 겸 해 서 블로그에 남깁니다.)
-
-
-
-
-
-
-
-
-
-1. 모바일 앱 아키텍처 개요
-
-
-
-
-
-1-1 모바일 앱 사용자 환경
-
-
-
+![firebase_add_project_01]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png)
 앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스
-
-
 
 
 
