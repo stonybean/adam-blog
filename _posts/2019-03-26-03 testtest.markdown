@@ -16,11 +16,11 @@ author: 우주
 
 <br><br><br><br><br><br>
 
-<span style="color: #0c343d; font-size: x-large;"><b> 1. 모바일 앱 아키텍처 개요</b></span><br><br>
-<span style="color: #0c343d; font-size: large;"><b>1-1 모바일 앱 사용자 환경</b></span><br><br>
+<span style="font-size: x-large;"><b> 1. 모바일 앱 아키텍처 개요</b></span><br><br>
+<span style="font-size: large;"><b>1-1 모바일 앱 사용자 환경</b></span><br><br>
 
 
-![firebase_add_project_01]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png)
+![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png)<br>
 앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스
 
 
