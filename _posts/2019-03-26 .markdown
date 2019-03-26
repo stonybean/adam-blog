@@ -8,45 +8,28 @@ tags: [Android]
 author: 우주
 ---
 
-<div class="separator" style="clear: both; text-align: center;">
+이번 해부터 회사에서 돌아가면서 세미나를 준비하게 되었다.
 
-</div>
-<div class="separator" style="clear: both; text-align: justify;">
-<span style="color: #0c343d; font-size: large; text-align: left;">이번 해부터 회사에서 돌아가면서 세미나를 준비하게 되었다.</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">
-</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">발표 주제는 없음(...) 각자 알아서 하고 싶은 걸로. 제일 어려운 주제다.</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">
-</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">무엇을 할까 고민하다 평소 들어보기는 했지만 제대로 알지 못했던 아키텍처 패턴(혹은 디자인 패턴)에 대해 발표하기로 결정했다.</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">
-</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">세미나 준비를 하면서 수많은 자료를 보고 여러 블로그들을 방문 하면서(구글링) 다양한 정보들을 찾아볼 수 있었지만 아키텍처 패턴이 왜 필요하며 어떻게 등장하게 되었는가에 대한 설명은 조금 부족하다고 느꼈다.</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">
-</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">그래서 각 패턴에 대한 설명 전에 먼저 그 부분에 대해 간단히 정리하고 넘어가도록 하겠다.</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">(혹시나 필요하신 분들께 조금이나마 도움이 될까해 발표 후 정리 겸 해 서 블로그에 남깁니다.)</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">
-</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">
-</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">
-</span></div>
-<div class="separator" style="clear: both; text-align: left;">
-<span style="color: #0c343d; font-size: large;">
-</span></div>
+
+
+발표 주제는 없음(...) 각자 알아서 하고 싶은 걸로. 제일 어려운 주제다.
+
+
+
+무엇을 할까 고민하다 평소 들어보기는 했지만 제대로 알지 못했던 아키텍처 패턴(혹은 디자인 패턴)에 대해 발표하기로 결정했다.
+
+
+
+세미나 준비를 하면서 수많은 자료를 보고 여러 블로그들을 방문 하면서(구글링) 다양한 정보들을 찾아볼 수 있었지만 아키텍처 패턴이 왜 필요하며 어떻게 등장하게 되었는가에 대한 설명은 조금 부족하다고 느꼈다.
+
+
+
+그래서 각 패턴에 대한 설명 전에 먼저 그 부분에 대해 간단히 정리하고 넘어가도록 하겠다.
+
+(혹시나 필요하신 분들께 조금이나마 도움이 될까해 발표 후 정리 겸 해 서 블로그에 남깁니다.)
+
+
+
 <div class="separator" style="clear: both; text-align: left;">
 <span style="color: #0c343d; font-size: x-large;"><b>1. 모바일 앱 아키텍처 개요</b></span></div>
 <div class="separator" style="clear: both; text-align: left;">
