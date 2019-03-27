@@ -4,7 +4,7 @@ title:  Android| 앱 아키텍처 패턴
 date:   2019-03-26
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: /03_DESIGN_PATTERN/abstract-4022574_1920.jpg
-tags: [Android][Architecture][DesignPattern]
+tags: [Android, Architecture, DesignPattern]
 author: 우주
 ---
 
@@ -31,7 +31,7 @@ author: 우주
 
 
 ## 1-1 모바일 앱 사용자 환경
-![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png)
+![01_camera_app_process]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/01_camera_app_process.png)
 
 <center>
   <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span>
@@ -71,6 +71,8 @@ author: 우주
 
 ## 1-2 일반 아키텍처 원칙
 
+<br>
+
 **￭ 관심사 분리 (Separate of Concerns)**
 
 안드로이드는 UI 기반 클래스(Activity, Fragment)에 코드를 작성한다. 이러한 클래스는 사실 안드로이드 OS와 앱 사이의 계약을 나타내도록 이어주는 역할에 불과한데 OS는 언제든지 이 클래스들을 제거할 수 있다. 사용자 환경과 수월한 앱 관리 환경을 위해 이러한 클래스의 의존성을 최소화하는 것이 필요하다.
@@ -90,7 +92,7 @@ author: 우주
 
 <br>
 
-![02_life_cycle_viewmodel]({{site.baseurl}}/assets/img/03_Architecture/02_life_cycle_viewmodel.png)
+![02_life_cycle_viewmodel]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/02_life_cycle_viewmodel.png)
 
 <center>
   <span style="font-size: small;">수명주기와 ViewModel (그림 왼쪽은 액티비티의 생성, 화면 전환, 종료까지의 수명주기를 나타낸다.)</span>
@@ -103,7 +105,7 @@ author: 우주
 
 <br>
 
-![03_basic_activity]({{site.baseurl}}/assets/img/03_Architecture/03_basic_activity.png)
+![03_basic_activity]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/03_basic_activity.png)
 
 <center>
   <span style="font-size: small;">일반적 코드 작성법</span>
@@ -129,7 +131,7 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 
 <br>
 
-![04_mvc_pattern]({{site.baseurl}}/assets/img/03_Architecture/04_mvc_pattern.png)
+![04_mvc_pattern]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/04_mvc_pattern.png)
 
 <center>
   <span style="font-size: small;"> MVC 구조 및 동작</span>
@@ -172,6 +174,8 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 
 ## 2-3 장/단점
 
+<br>
+
 **￭ 장점**
 
 - 모델과 뷰를 분리
@@ -193,7 +197,7 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 
 ## 2-4 샘플코드
 
-![05_mvc_activity]({{site.baseurl}}/assets/img/03_Architecture/05_mvc_activity.png)
+![05_mvc_activity]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/05_mvc_activity.png)
 
 <center>
   <span style="font-size: small;">MVC 패턴을 적용한 코드 (뷰와 컨트롤러의 구분이 쉽지 않다.)</span>
@@ -211,9 +215,9 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 
 ## 3-1 구조 및 동작
 
+<br>
+
 사용자 입력은 이제 뷰를 통해 들어오게 된다. 뷰는 이러한 이벤트를 프리젠터로 전달하고 프리젠터는 모델과의 상호작용을 통해 뷰에게 업데이트 할 내용을 전달한다. 그리고 이 내용을 받은 뷰가 최종적으로 업데이트 된다.
-
-
 
 
 
