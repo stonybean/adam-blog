@@ -26,7 +26,13 @@ author: 우주
 
 <br><br><br><br><br>
 
+[TOC]
+
+
+
 # 1. 모바일 앱 아키텍처 개요
+
+------
 
 
 
@@ -120,6 +126,8 @@ author: 우주
 
 # 2. MVC
 
+------
+
 
 
 ## 2-1 구조 및 동작
@@ -207,6 +215,8 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 <br><br><br><br>
 
 # 3. MVP
+
+------
 
 
 
@@ -311,7 +321,11 @@ MVP 패턴에서 모델과 뷰는 MVC 패턴에서와는 달리 더이상 서로
 
 <br><br><br><br>
 
+
+
 # 4. MVVM
+
+------
 
 
 
@@ -378,7 +392,7 @@ MVP 패턴에서 모델과 뷰는 MVC 패턴에서와는 달리 더이상 서로
 ![11_mvvm_activity]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/11_mvvm_activity.png){: .center}
 
 <center>
-<span style="font-size: small;">| 뷰 (so simple..)</span>
+<span style="color:grey; font-size: small;">| 뷰 (so simple..)</span>
 </center>
 
 <br><br>
@@ -390,7 +404,7 @@ MVP 패턴에서 모델과 뷰는 MVC 패턴에서와는 달리 더이상 서로
 ![12_mvvm_viewmodel]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/12_mvvm_viewmodel.png){: .center}
 
 <center>
-<span style="font-size: small;">| 뷰모델</span>
+<span style="color:grey; font-size: small;">| 뷰모델</span>
 </center>
 
 <br><br>
@@ -401,7 +415,7 @@ initView() 부분을 잘보면 어디서 많이 보던 코드들 아닌가? 뷰�
 
 마치며,
 
-<br><br>
+<br>
 
 아키텍처 패턴에 대해 여러 자료를 찾아보고 검토해봤지만 사실 아직도 완벽하게 아키텍처 패턴들을 이해한 것은 아니다. 하지만 어느정도 이해한 부분을 이렇게나마 정리해 남겨두고 앞으로 더 공부를 해야겠다. 또 이 패턴들을 조금씩 실제 업무에도 적용해 어느 부분이 좋고, 어느 부분이 나쁜지 직접 느껴봐야겠다.
 
