@@ -8,6 +8,19 @@ tags: [Android][Architecture][DesignPattern]
 author: 우주
 ---
 
+```css
+img[src*='#center'] { 
+    display: block;
+    margin: auto;
+}
+
+<style>
+.center {
+    text-align:center;
+}
+</style>
+```
+
 이번 해부터 회사에서 돌아가면서 세미나를 준비하게 되었다.
 
 발표 주제는 없음(...) 각자 알아서 하고 싶은 걸로. 제일 어려운 주제다.
@@ -35,12 +48,12 @@ author: 우주
 
 
 ## 1-1 모바일 앱 사용자 환경
-![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png)
+![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png #center)
 
 <center>
   <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span>
 </center>
-
+![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png ){:.center}
 
 아키텍처 패턴을 살펴보기 전에 가장 먼저 모바일 앱 사용자 환경에 대한 이해가 필요하다. 사진을 공유하는 앱을 예로 들어보자. 앱을 통해 사진을 공유하는 프로세스는 다음과 같다.
 
