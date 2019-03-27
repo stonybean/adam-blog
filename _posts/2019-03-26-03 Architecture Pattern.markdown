@@ -40,10 +40,8 @@ author: 우주
 ![01_camera_app_process]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/01_camera_app_process.png){: .center}
 
 <center>
-  <span style="font-size: small;">| 앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span>
+  <span style="font-size: small; color: grey">사진공유 앱에서 카메라로 사진을 찍은 뒤 공유하는 프로세스</span>
 </center>
-
->  <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스</span>{: .center}
 
 <br>
 
@@ -100,7 +98,7 @@ author: 우주
 ![02_life_cycle_viewmodel]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/02_life_cycle_viewmodel.png){: .small-wrapper}{: .center}
 
 <center>
-  <span style="font-size: small;">| 수명주기와 ViewModel (그림 왼쪽은 액티비티의 생성, 화면 전환, 종료까지의 수명주기를 나타낸다.)</span>
+  <span style="font-size: small; color: grey">수명주기와 ViewModel (그림 왼쪽은 액티비티의 생성, 화면 전환, 종료까지의 수명주기를 나타낸다.)</span>
 </center>
 
 <br><br>
@@ -113,7 +111,7 @@ author: 우주
 ![03_basic_activity]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/03_basic_activity.png){: .center}
 
 <center>
-  <span style="font-size: small;">| 일반적 코드 작성법</span>
+  <span style="font-size: small; color: grey">일반적 코드 작성법</span>
 </center>
 
 <br><br>
@@ -141,7 +139,7 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 ![04_mvc_pattern]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/04_mvc_pattern.png){: .center}
 
 <center>
-  <span style="font-size: small;">| MVC 구조 및 동작</span>
+  <span style="font-size: small; color: grey">MVC 구조 및 동작</span>
 </center>
 
 
@@ -207,7 +205,7 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 ![05_mvc_activity]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/05_mvc_activity.png){: .center}
 
 <center>
-  <span style="font-size: small;">| MVC 패턴을 적용한 코드 (뷰와 컨트롤러의 구분이 쉽지 않다.)</span>
+  <span style="font-size: small; color: grey">MVC 패턴을 적용한 코드 (뷰와 컨트롤러의 구분이 쉽지 않다.)</span>
 </center>
 
 <br><br>
@@ -231,7 +229,7 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 ![06_mvp_pattern]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/06_mvp_pattern.png){: .center}
 
 <center>
-<span style="font-size: small;">| MVP 구조 및 동작</span>
+<span style="font-size: small; color: grey">MVP 구조 및 동작</span>
 </center>
 
 <br><br><br>
@@ -290,7 +288,7 @@ MVP 패턴에서 모델과 뷰는 MVC 패턴에서와는 달리 더이상 서로
 ![07_mvp_interface]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/07_mvp_interface.png){: .center}
 
 <center>
-  <span style="font-size: small;">| 프리젠터 인터페이스 (베이스 프리젠터)</span>
+  <span style="font-size: small; color: grey">프리젠터 인터페이스 (베이스 프리젠터)</span>
 </center>
 
 <br><br>
@@ -302,7 +300,7 @@ MVP 패턴에서 모델과 뷰는 MVC 패턴에서와는 달리 더이상 서로
 ![08_mvp_activity]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/08_mvp_activity.png){: .center}
 
 <center>
-	<span style="font-size: small;">| 뷰의 처리</span>
+	<span style="font-size: small; color: grey">뷰의 처리</span>
 </center>
 
 <br><br>
@@ -314,7 +312,7 @@ MVP 패턴에서 모델과 뷰는 MVC 패턴에서와는 달리 더이상 서로
 ![09_mvp_presenter]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/09_mvp_presenter.png){: .center}
 
 <center>
-	<span style="font-size: small;">| 프리젠터 인터페이스 구현체</span>
+	<span style="font-size: small; color: grey">프리젠터 인터페이스 구현체</span>
 </center>
 
 <br><br>
@@ -340,7 +338,7 @@ MVP 패턴에서 모델과 뷰는 MVC 패턴에서와는 달리 더이상 서로
 ![10_mvvm_pattern]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/10_mvvm_pattern.png){: .center}
 
 <center>
-	<span style="font-size: small;">| MVVM 구조 및 동작</span>
+	<span style="font-size: small; color: grey">MVVM 구조 및 동작</span>
 </center>
 
 <br><br><br>
@@ -394,7 +392,7 @@ MVP 패턴에서 모델과 뷰는 MVC 패턴에서와는 달리 더이상 서로
 ![11_mvvm_activity]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/11_mvvm_activity.png){: .center}
 
 <center>
-<span style="color:grey; font-size: small;">| 뷰 (so simple..)</span>
+<span style="color:grey; font-size: small; color: grey">뷰 (so simple..)</span>
 </center>
 
 <br><br>
@@ -406,7 +404,7 @@ MVP 패턴에서 모델과 뷰는 MVC 패턴에서와는 달리 더이상 서로
 ![12_mvvm_viewmodel]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/12_mvvm_viewmodel.png){: .center}
 
 <center>
-<span style="color:grey; font-size: small;">| 뷰모델</span>
+<span style="color:grey; font-size: small; color: grey">뷰모델</span>
 </center>
 
 <br><br>
