@@ -31,7 +31,7 @@ author: 우주
 
 
 ## 1-1 모바일 앱 사용자 환경
-![01_camera_app_process]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/01_camera_app_process.png#center)
+![01_camera_app_process]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/01_camera_app_process.png){: .center}
 
 <center>
   <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span>
@@ -71,13 +71,11 @@ author: 우주
 
 ## 1-2 일반 아키텍처 원칙
 
-<br>
-
 **￭ 관심사 분리 (Separate of Concerns)**
 
 안드로이드는 UI 기반 클래스(Activity, Fragment)에 코드를 작성한다. 이러한 클래스는 사실 안드로이드 OS와 앱 사이의 계약을 나타내도록 이어주는 역할에 불과한데 OS는 언제든지 이 클래스들을 제거할 수 있다. 사용자 환경과 수월한 앱 관리 환경을 위해 이러한 클래스의 의존성을 최소화하는 것이 필요하다.
 
-<br><br>
+<br>
 
 **￭ 모델에서 UI 만들기**
 
@@ -92,7 +90,7 @@ author: 우주
 
 <br>
 
-![02_life_cycle_viewmodel]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/02_life_cycle_viewmodel.png)
+![02_life_cycle_viewmodel]({{site.baseurl}}/assets/img/03_DESIGN_PATTERN/02_life_cycle_viewmodel.png){: width="300" height="300"}
 
 <center>
   <span style="font-size: small;">수명주기와 ViewModel (그림 왼쪽은 액티비티의 생성, 화면 전환, 종료까지의 수명주기를 나타낸다.)</span>
@@ -146,7 +144,7 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 - 데이터 + 상태 + 비즈니스 로직
 - 뷰나 컨트롤러에 묶이지 않아 재사용 가능
 
-<br><br>
+<br>
 
 **￭ View**
 
@@ -156,7 +154,7 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 
 - 사용자가 어떤 액션을 하든 무엇을 해야할지 모름
 
-<br><br>
+<br>
 
 **￭ Controller**
 
@@ -174,15 +172,13 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 
 ## 2-3 장/단점
 
-<br>
-
 **￭ 장점**
 
 - 모델과 뷰를 분리
 - 모델의 비종속성으로 재사용 가능
 - 구현하기 가장 쉬움
 
-<br><br>
+<br>
 **￭ 단점**
 
 - 컨트롤러가 뷰에 단단히 결합되며, 뷰의 확장일 수 있음
@@ -213,8 +209,6 @@ MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트�
 
 
 ## 3-1 구조 및 동작
-
-<br>
 
 사용자 입력은 이제 뷰를 통해 들어오게 된다. 뷰는 이러한 이벤트를 프리젠터로 전달하고 프리젠터는 모델과의 상호작용을 통해 뷰에게 업데이트 할 내용을 전달한다. 그리고 이 내용을 받은 뷰가 최종적으로 업데이트 된다.
 
