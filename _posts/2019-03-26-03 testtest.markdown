@@ -24,7 +24,7 @@ author: 우주
 <br>
 ## 1-1 모바일 앱 사용자 환경<br>
 <br>
-![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png) {:.aligncenter}
+![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png "float:center;")
 > <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span> {: .text-center }
 
 <br>
