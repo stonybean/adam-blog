@@ -26,7 +26,7 @@ author: 우주
 
 <br><br><br><br><br>
 
-[TOC]
+
 
 
 
@@ -42,6 +42,8 @@ author: 우주
 <center>
   <span style="font-size: small;">| 앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span>
 </center>
+
+>  <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스</span>{: .center}
 
 <br>
 
