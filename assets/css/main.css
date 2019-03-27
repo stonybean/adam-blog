@@ -1758,4 +1758,8 @@ pre code {
   .author-box .author-desc p {
     margin: 0 0 15px;
   }
+  img[src*='#center'] {
+    display: block;
+    margin: auto;
+  }
 }
