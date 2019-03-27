@@ -24,8 +24,10 @@ author: 우주
 <br>
 ## 1-1 모바일 앱 사용자 환경<br>
 <br>
-![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png "float:center;")
-> <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span> {: .text-center }
+<center>
+![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png)
+> <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span>
+</center>
 
 <br>
 <br>
@@ -40,7 +42,7 @@ author: 우주
 단순 과정으로만 봤을 때 카메라 앱이 실행될 때 실제로는 사진 공유 앱은 중단된 상태이다. 하지만 사용자의 입장에서는 사진을 공유하는 작업 환경(사용자 사용 환경)이 중단된 것이 아니다. 심지어 카메라 앱이 실행 되어 있는 중에도 사용자는 다른 앱을 실행할 수가 있다.<br>
 <br>
 <br>
-<b>==￭ 사용 환경 중단==</b><br>
+==￭ 사용 환경 중단==<br>
 <br>
 이처럼 모바일 환경에서는 전화, 알림 등에 의해 사용 환경이 중단되거나 다른 앱으로 바꾸는 동작이 일반적이다. 사용자는 사용 환경 중단에 대응하고 다시 앱으로 돌아가기를 기대하기 때문에 앱에서 이러한 흐름을 올바르게 처리할 필요가 있다.<br>
 <br>
