@@ -20,14 +20,12 @@ author: 우주
 <br>
 <br>
 <br>
-<span style="font-size: x-large;"><b>1. 모바일 앱 아키텍처 개요</b></span><br>
+# 1. 모바일 앱 아키텍처 개요<br>
 <br>
-<span style="font-size: large;"><b>1-1 모바일 앱 사용자 환경</b></span><br>
+## 1-1 모바일 앱 사용자 환경<br>
 <br>
-<table align="center" cellpadding="0" cellspacing="0"><tbody>
 ![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png)<br>
-> <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span>
-</tbody></table>
+> <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span>{: .text-center }
 <br>
 <br>
 아키텍처 패턴을 살펴보기 전에 가장 먼저 모바일 앱 사용자 환경에 대한 이해가 필요하다. 사진을 공유하는 앱을 예로 들어보자. 앱을 통해 사진을 공유하는 프로세스는 다음과 같다.<br>
