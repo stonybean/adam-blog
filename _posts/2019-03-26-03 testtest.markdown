@@ -36,6 +36,11 @@ author: 우주
 <center>
   <span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span>
 </center>
+<center>
+  <img src="{{site.baseurl}}/assets/img/03_DESIGN_PATTERN/01_camera_app_process.png"></center>
+
+
+
 <br>
 
 아키텍처 패턴을 살펴보기 전에 가장 먼저 모바일 앱 사용자 환경에 대한 이해가 필요하다. 사진을 공유하는 앱을 예로 들어보자. 앱을 통해 사진을 공유하는 프로세스는 다음과 같다.
