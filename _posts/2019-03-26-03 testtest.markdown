@@ -25,7 +25,7 @@ author: 우주
 <span style="font-size: large;"><b>1-1 모바일 앱 사용자 환경</b></span><br>
 <br>
 ![01_camera_app_process]({{site.baseurl}}/assets/img/03_Architecture/01_camera_app_process.png)<br>
-><span style="font-size: small;">앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스</span><br>
+<span style="font-size: small;"> >앱에서 카메라를 통해 사진을 찍은 뒤 공유하는 프로세스 </span><br>
 <br>
 <br>
 아키텍처 패턴을 살펴보기 전에 가장 먼저 모바일 앱 사용자 환경에 대한 이해가 필요하다. 사진을 공유하는 앱을 예로 들어보자. 앱을 통해 사진을 공유하는 프로세스는 다음과 같다.<br>
@@ -100,7 +100,7 @@ author: 우주
 MVC 패턴에서 사용자 입력은 컨트롤러를 통해 들어오며 컨트롤러는 모델과 상호작용을 통해 뷰를 업데이트한다. 이때 뷰는 모델을 참조하게 된다. 이를 그림으로 나타내면 아래와 같다.<br>
 <br>
 ![04_mvc_pattern]({{site.baseurl}}/assets/img/03_Architecture/04_mvc_pattern.png)<br>
-><span style="font-size: small;"> MVC 구조 및 동작</span><br>
+> <span style="font-size: small;"> MVC 구조 및 동작</span><br>
 <br>
 <br>
 <br>
