@@ -41,9 +41,11 @@ author: 우주
 
 <br>
 
+<br>
+
 지금은 많은 개발자들이 코틀린을 사용하고 있지만, 코틀린은 원래 판매를 위해 만들어진 것은 아니었다.
 
-코틀린을 만든 곳은 **JetBrains **인데, IntelliJ IDEA 같은 IDE(Integrated Development Environment)를 만드는 회사로 유명하다.
+코틀린을 만든 곳은 **JetBrains** 인데, IntelliJ IDEA 같은 IDE(Integrated Development Environment)를 만드는 회사로 유명하다.
 
 (Android Studio도 IntelliJ를 기반으로 구글과 협력해 만들어짐)
 
@@ -62,8 +64,6 @@ author: 우주
 # 1. Java와 Android
 
 ------
-
-<br>
 
 자바와 코틀린의 호환성을 이해하기 위해서는 먼저 자바 프로그램의 특징을 알아야한다.
 
@@ -115,13 +115,11 @@ author: 우주
 
 ------
 
-<br>
-
 먼저 안드로이드 개발자 공식 홈페이지에 나와있는 [빌드 프로세스](https://developer.android.com/studio/build?hl=ko#build-process)를 살펴보면 다음과 같다.
 
 <br>
 
-![build-process_2x]({{site.baseurl}}/assets/img/04_KOTLIN_JAVA/build-process_2x.png){: .center}
+![build-process]({{site.baseurl}}/assets/img/04_KOTLIN_JAVA/build-process.png){: .center}
 
 <center>
   <span style="font-size: small; color: grey">일반적인 Android 앱 모듈의 빌드 프로세스</span>
@@ -142,7 +140,9 @@ author: 우주
 
 <br>
 
-바로 빌드 프로세스의 첫 번째 단계가 코틀린이 자바와 100% 호환이 가능하다는 것을 보여주는 부분이다.
+<br>
+
+여기서 빌드 프로세스의 첫 번째 단계가 코틀린이 자바와 100% 호환이 가능하다는 것을 보여주는 부분이다.
 
 <br>
 
@@ -152,7 +152,7 @@ author: 우주
 
 <br>
 
-![code_to_dex]({{site.baseurl}}/assets/img/04_KOTLIN_JAVA/code_to_dex.jpg){: .center}
+![code_to_dex]({{site.baseurl}}/assets/img/04_KOTLIN_JAVA/code_to_dex.png){: .center}
 
 <center>
   <span style="font-size: small; color: grey">Java(.java) / Kotlin(.kt) -> Byte Code(.class) -> DEX File(s)(.dex)</span>
@@ -168,9 +168,11 @@ author: 우주
 
 <br>
 
-<br>
+<br
 
-**<요약>**
+
+
+<h4><요약></h4>
 
 1. Java code(.java)/Kotlin code(.kt) -> byte code(.class)로 컴파일 (= 상호 호환 가능)
 2. .class파일들이 다시 DEX 파일로 변환
@@ -198,7 +200,9 @@ author: 우주
 
 <br>자바에 비해 확 줄어드는 코드의 양, 속도, 생산성 등 여러가지 면에서 더 좋은 성능을 보여주기 때문에 앞으로는 코틀린을 훨씬 많이 사용하게 될 것 같다. (또 구글에서도 자바보다는 코틀린을 확실히 밀고 있기도 하기에)
 
-이제는 완전 대세 반열에 올라선 코틀린을 좀 더 깊이 있게 공부하고 사용해야겠다 🤓
+<br>
+
+이제는 완전 대세 반열에 올라선 코틀린을 좀 더 깊이 있게 공부하고 제대로 사용해야겠다 🤓
 
 <br>
 
