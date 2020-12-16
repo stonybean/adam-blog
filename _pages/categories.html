@@ -7,7 +7,7 @@ permalink: /categories/
 {% assign category_words = site_categories | split:',' | sort %}
 
 <section class="blog-categories">
-  <h1>categories in Blog</h1>
+  <h1>Categories</h1>
   <ul class="categories">
 <!--  cycles through category list and creates header row of all categories used in site with accompanying per-category counts...-->
   {% for item in (0..site.categories.size) %}{% unless forloop.last %}
