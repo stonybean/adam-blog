@@ -217,6 +217,8 @@ author: 우주
 
 (* 틀린 부분이 있으면 댓글로 알려주세요.)
 
+<br>
+
 참고 : 
 
 [https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages)
