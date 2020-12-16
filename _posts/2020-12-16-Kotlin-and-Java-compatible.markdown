@@ -4,6 +4,7 @@ title:  안드로이드에서 코틀린과 자바는 어떻게 100% 호환되는
 date:   2020-12-16
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: /04_KOTLIN_JAVA/shaking-hands.jpg
+categories: Android
 tags: [Android, Kotlin, Java, JVM, DVM]
 author: 우주
 ---
