@@ -169,7 +169,7 @@ author: 우주
 
 <br>
 
-<h4>￭ 요약</h4>
+<h3>￭ 요약</h3>
 
 1. Java code(.java)/Kotlin code(.kt) -> byte code(.class)로 컴파일 (= 상호 호환 가능)
 2. .class파일들이 다시 DEX 파일로 변환
@@ -191,15 +191,15 @@ author: 우주
 
 또 이걸 찾아보면서 안드로이드의 빌드 프로세스, JVM, DVM, ART, JIT, AOT 등등 다양한 것들 또한 다시 한 번 학습하게 된 것 같다.
 
-역시 하나를 알려고 하면 꼬리를 물고 다른 것들도 알아야 하는 IT의 학습 환경...(?) 😇
+역시 하나를 알려고 하면 꼬리를 물고 다른 것들도 알아야 하는 IT의 학습 환경...(?) 🤯
 
 <br>
 
-<br>자바에 비해 확 줄어드는 코드의 양, 속도, 생산성 등 여러가지 면에서 더 좋은 성능을 보여주기 때문에 앞으로는 코틀린을 훨씬 많이 사용하게 될 것 같다. (또 구글에서도 자바보다는 코틀린을 확실히 밀고 있기도 하기에)
-
 <br>
 
-이제는 완전 대세 반열에 올라선 코틀린을 좀 더 깊이 있게 공부하고 제대로 사용해야겠다 🤓
+<br>자바에 비해 확 줄어드는 코드의 양, 속도, 생산성 등 여러가지 면에서 더 좋은 성능을 보여주기 때문에 앞으로는 코틀린을 훨씬 많이 사용하게 될 것 같다. (구글에서도 자바보다는 코틀린을 확실히 밀고 있기도 하기에)
+
+이제는 완전 대세 반열에 올라선 코틀린을 좀 더 깊이 있게 공부하고 제대로 사용해야겠다. 끝.
 
 <br>
 
@@ -218,3 +218,7 @@ https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and
 https://dev.to/jay_tillu/why-jetbrains-create-kotlin-the-inside-story-of-kotlin-creation-1135
 
 http://math.hws.edu/eck/cs124/javanotes6/c1/s3.html
+
+<br>
+
+<br>
