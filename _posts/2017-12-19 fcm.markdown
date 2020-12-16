@@ -4,7 +4,6 @@ title:  FCM을 이용한 Android Push 구현하기
 date:   2017-12-19
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: /01_FCM/intro.png
-categories: Android
 tags: [Blog, Android, FCM]
 author: 우주
 ---
