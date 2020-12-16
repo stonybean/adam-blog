@@ -11,7 +11,7 @@ permalink: /categories/
     {% capture category_name %}{{ category | first }}{% endcapture %}
     <li ><a href="#{{ this_word | cgi_escape }}" class="categories">{{ category_name }} <span>({{ site.categories[category_name].size }})</span></a></li>
   </ul>
-    <h2 id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
+    <h2 id="{{ category_name | cgi_escape }}">{{ category_name }}</h2>
 
     {% for post in site.categories[category_name] %}  
     <div class="categorie-list">
