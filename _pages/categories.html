@@ -3,25 +3,25 @@ layout: home-page
 title: Categories
 permalink: /categories/
 ---
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign tag_words = site_tags | split:',' | sort %}
+{% capture site_categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign category_words = site_categories | split:',' | sort %}
 
-<section class="blog-tags">
+<section class="blog-categories">
   <h1>Categories in Blog</h1>
-  <ul class="tags">
-<!--  cycles through tag list and creates header row of all tags used in site with accompanying per-tag counts...-->
-  {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-    {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-    <li ><a href="#{{ this_word | cgi_escape }}" class="tag">{{ this_word }} <span>({{ site.tags[this_word].size }})</span></a></li>
+  <ul class="categories">
+<!--  cycles through categories list and creates header row of all categories used in site with accompanying per-category counts...-->
+  {% for item in (0..site.categories.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ category_words[item] | strip_newlines }}{% endcapture %}
+    <li ><a href="#{{ this_word | cgi_escape }}" class="categories">{{ this_word }} <span>({{ site.categories[this_word].size }})</span></a></li>
   {% endunless %}{% endfor %}
   </ul>
-<!--cycles through tag list and creates subheader for each tag name...-->
-  {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-    {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+<!--cycles through categoriy list and creates subheader for each categoriy name...-->
+  {% for item in (0..site.categories.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ category_words[item] | strip_newlines }}{% endcapture %}
   <h2 id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
-<!--  lists all posts corresponding to specific tag...-->
-    {% for post in site.tags[this_word] %}{% if post.title != null %}
-    <div class="tag-list">
+<!--  lists all posts corresponding to specific categoriy...-->
+    {% for post in site.categories[this_word] %}{% if post.title != null %}
+    <div class="categorie-list">
         <span><a href="{{ post.url }}">{{ post.title }}</a></span>
         <small><span>| {{ post.date | date_to_string }}</span></small>
     </div>

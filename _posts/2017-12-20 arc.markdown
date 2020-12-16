@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  Android| Advanced REST client를 이용한 안드로이드 푸시 테스트
+title:  Advanced REST client를 이용한 안드로이드 푸시 테스트
 date:   2017-12-20
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: /01_FCM/intro.png
+categories: Android
 tags: [Blog, Android, FCM, ARC]
 author: 우주
 ---

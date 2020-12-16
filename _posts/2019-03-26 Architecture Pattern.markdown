@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  Android| 앱 아키텍처 패턴
+title:  안드로이드 앱 아키텍처 패턴
 date:   2019-03-26
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: /03_DESIGN_PATTERN/abstract-4022574_1920.jpg
+categories: Android
 tags: [Android, Architecture, DesignPattern]
 author: 우주
 ---
